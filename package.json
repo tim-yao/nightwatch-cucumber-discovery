@@ -2,7 +2,6 @@
   "name": "cucumber-nightwatch-boilerplate",
   "version": "1.0.0",
   "description": "Boilerplate code to run nightwatch tests with Cucumber",
-  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -10,23 +9,13 @@
     "test": "nightwatch",
     "eslint": "eslint src/specs --quiet"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gravityvi/cucumber-nightwatch-boilerplate.git"
-  },
-  "author": "Ravi Sawlani",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/gravityvi/cucumber-nightwatch-boilerplate/issues"
-  },
-  "homepage": "https://github.com/gravityvi/cucumber-nightwatch-boilerplate#readme",
   "dependencies": {
-    "@cucumber/cucumber": "^8.0.0-rc.2",
-    "chromedriver": "^97.0.4",
+    "@cucumber/cucumber": "^8.2.2",
+    "chromedriver": "^101.0.0",
     "geckodriver": "^3.0.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "nightwatch": "^2.0.7"
+    "nightwatch": "^2.1.7"
   }
 }
