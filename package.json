@@ -6,7 +6,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "nightwatch",
+    "test": "nightwatch --format @cucumber/pretty-formatter",
     "eslint": "eslint src/specs --quiet"
   },
   "dependencies": {
@@ -15,6 +15,7 @@
     "geckodriver": "^3.0.1"
   },
   "devDependencies": {
+    "@cucumber/pretty-formatter": "^1.0.0-alpha.2",
     "eslint": "^7.32.0",
     "nightwatch": "^2.1.7"
   }
