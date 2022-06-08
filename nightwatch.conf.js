@@ -1,4 +1,12 @@
 const Services = {}; loadServices();
+const {Eyes, VisualGridRunner, BrowserType, DeviceName, ScreenOrientation, IosDeviceName} = require('@applitools/eyes-nightwatch');
+const eyes = new Eyes(new VisualGridRunner);
+const configuration = eyes.getConfiguration();
+
+configuration.addBrowser({width: 1200, height: 800, name: BrowserType.FIREFOX});
+configuration.addBrowser({width: 1200, height: 800, name: BrowserType.SAFARI});
+configuration.addBrowser({width: 1200, height: 800, name: BrowserType.EDGE});
+configuration.addBrowser({deviceName: DeviceName.Galaxy_S9_Plus});
 
 //  _   _  _         _      _                     _          _
 // | \ | |(_)       | |    | |                   | |        | |
@@ -18,13 +26,33 @@ module.exports = {
   page_objects_path: '',
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/#writing-custom-commands
-  custom_commands_path: '',
+  custom_commands_path: ['node_modules/@applitools/eyes-nightwatch/commands'],
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/#writing-custom-assertions
   custom_assertions_path: '',
 
   // See https://nightwatchjs.org/guide/#external-globals
   globals_path: '',
+
+  eyes: {
+    appName: 'Nightwatch 2 test',
+    enableEyesLogs: true, // this will enable the SDK's logs and write them to the console
+    useVisualGrid: true, // this will utilize the Ultrafast grid
+    concurrency: 5,
+    // layoutBreakpoints:true, [Array of widths] or a boolean value|| Responsive pages display different content depending on the viewport's width, so this option can be used to instruct eyes to take dom captures using those widths, and test all responsive variations of your page
+    // addBrowsers: [
+    //   {name: BrowserType.EDGE_CHROMIUM, width: 768, height: 1024},
+    //   {name: BrowserType.FIREFOX, width: 768, height: 1024},
+    //   {name: BrowserType.CHROME, width: 768, height: 1024},
+    //   {name: BrowserType.SAFARI, width: 768, height: 1024}
+    //   {name: BrowserType.IE_11, width: 1600, height: 1200},
+    //   {name: BrowserType.EDGE_CHROMIUM, width: 1024, height: 768},
+    //   {name: BrowserType.SAFARI, width: 800, height: 600},
+    //   {chromeEmulationInfo: {deviceName: DeviceName.iPhone_X, screenOrientation: ScreenOrientation.PORTRAIT}},
+    //   {chromeEmulationInfo: {deviceName: DeviceName.Pixel_2, screenOrientation: ScreenOrientation.PORTRAIT}},
+    //   {iosDeviceInfo: {deviceName: IosDeviceName.iPhone_11_Pro_Max, screenOrientation: ScreenOrientation.PORTRAIT, iosVersion: 'latest'}} //safari on ios devices
+    // ],
+  },
 
   webdriver: {},
 
