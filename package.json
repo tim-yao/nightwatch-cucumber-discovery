@@ -15,6 +15,7 @@
     "geckodriver": "^3.0.1"
   },
   "devDependencies": {
+    "@applitools/eyes-nightwatch": "^1.11.1",
     "@cucumber/pretty-formatter": "^1.0.0-alpha.2",
     "eslint": "^7.32.0",
     "nightwatch": "^2.1.7"

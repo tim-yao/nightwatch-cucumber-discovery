@@ -5,6 +5,7 @@ Feature: DuckDuckGo Search
 Background: Background name
   Given I open the url "https://duckduckgo.com"
   Then I expect that the title is "DuckDuckGo — Privacy, simplified."
+  And visual test "Home" on "Duck Duck Go"
 
 @duckduckgo
 Scenario: Searching DuckDuckGo

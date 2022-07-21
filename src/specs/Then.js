@@ -1,4 +1,13 @@
 const {Then} = require('@cucumber/cucumber');
+const {Target} = require('@applitools/eyes-nightwatch');
+
+Then(/^visual test "(([^"]*)?)" on "(([^"]*)?)"$/, async (testName, testSite) => {
+  return browser
+    .eyesOpen(testSite, testName)
+    .eyesCheck(Target.window().fully())
+    .eyesClose()
+    .end();
+});
 
 Then(/^I expect that element "([^"]*)?" is( not)* displayed$/, function(selector, negativeCase) {
   if (negativeCase) {
